@@ -5,9 +5,11 @@ class Gossip
     @author = author
   end
   def save
-    gossip_to_csv = Hash.new { |@author, @content| @author[@content] =  "#{@author}: #{@content}" }
+    gossip_to_csv = Hash.new
+    gossip_to_csv[:author] = @author
+    gossip_to_csv[:content] = @content
     puts gossip_to_csv
   end
 end
-my_gossip = Gossip.new(author, content)
+my_gossip = Gossip.new("poney", "le cheval")
 my_gossip.save
