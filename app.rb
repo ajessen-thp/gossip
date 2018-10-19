@@ -1,5 +1,4 @@
-require 'bundler'
-Bundler.require
-
-$:.unshift File.expand_path("/gossip/lib", router.rb)
+$:.unshift File.expand_path("./../lib", __FILE__)
+require "bundler"
 require "router"
+Bundler.require
