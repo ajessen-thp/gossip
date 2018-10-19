@@ -1,9 +1,11 @@
 class Gossip
   attr_reader :author,:content
   def initialize(author, content)
-  @content = content
-  @author = author
+    @content = content
+    @author = author
+  end
+  def save
+    my_gossip = Gossip.new(author, content)
+    my_gossip.save
+  end
 end
-end
-my_gossip = Gossip.new(author, content)
-my_gossip.save
