@@ -11,5 +11,5 @@ class Gossip
     puts gossip_to_csv
   end
 end
-my_gossip = Gossip.new("poney", "le cheval")
+my_gossip = Gossip.new(author, content)
 my_gossip.save
