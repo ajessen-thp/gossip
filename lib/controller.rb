@@ -1,7 +1,16 @@
-require "view"
-require "gossip"
+require 'view'
+require 'gossip'
 
-def create_gossip
-  Gossip.new
-  gossip = Gossip.new("Jean-Michel Commère", "Féfé est de Bordeaux")
-  gossip.save
+class Controller
+
+  def initialize
+    @view = View.new
+  end
+
+  def create_gossip
+    params = @view.create_gossip
+    gossip = Gossip.new(params[:author], params[:content])
+    gossip.save
+  end
+
+end
